@@ -32,7 +32,7 @@ const Navbar = (props) => {
   );
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#6b705c" }}>
+    <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -119,12 +119,12 @@ const Navbar = (props) => {
           <Box sx={{ flexGrow: 0, display: "flex" }}>
             <HealthAndSafetyOutlinedIcon />
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="div"
-              sx={{
-                mt: -0.5,
-              }}
+              // sx={{
+              //   mt: -0.5,
+              // }}
             >
               MCI Screener
             </Typography>

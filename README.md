@@ -1,3 +1,8 @@
+# About
+
+This project was created for HINF 680 as a prototype expert system/decsision support system for Mild Coginative Impairement and Dementia Screening. Data from Bissig et al., 2020 on the Self-Administered Tasks Uncovering Risk of Neurodegeneration (SATURN) test was used for development of rules and logic but was adapted to demonstrate longitudinal screening. No elements of the tool have been clinical validated and it is for demonstration purposes only to show what a potential solution could look like. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

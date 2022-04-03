@@ -51,9 +51,15 @@ const Visualization = (props) => {
             <YAxis type="number" tickCount={15} domain={[0, 30]} />
             <Tooltip />
             <Legend />
-            <Bar dataKey="Results" barSize={20} fill="#219ebc" />
+            <Bar dataKey="Results" barSize={20} fill="#e9c46a" />
             <Line type="monotone" dataKey="Time to Complete" stroke="#023047" />
-            <ReferenceLine y={24} stroke="red" strokeDasharray="3 3" />
+            <ReferenceLine y={24} stroke="orange" strokeDasharray="3 3" />
+            <ReferenceLine
+              y={21}
+              stroke="red"
+              strokeDasharray="3 3"
+              strokeWidth={2}
+            />
           </ComposedChart>
         </ResponsiveContainer>
       </div>

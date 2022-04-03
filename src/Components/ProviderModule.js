@@ -9,12 +9,14 @@ import * as FirestoreService from "../Services/Firestore";
 const ProviderModule = (props) => {
   const [records, setRecords] = React.useState([]);
 
+  //retrieving recordset from database
   React.useEffect(() => {
     const fetchData = async () => {
       const data = await FirestoreService.getResults();
       let objArray = [];
       data.forEach((snap) => {
         let obj = {};
+        //if patient record has already been retrieved add in additional assessment results
         const found = objArray.findIndex(
           (el) => el.PATIENT === snap.data().PATIENT
         );
@@ -28,6 +30,13 @@ const ProviderModule = (props) => {
               Results: snap.data().TOTAL_TABLET_PLANNED_ANALYSIS,
               date: snap.data().DATE,
               "Time to Complete": snap.data().TOTAL_TIME_min,
+              "Reading Speed": snap.data().READING_SPEED_MEDIAN_words_per_s,
+              Visuospatial:
+                snap.data().SPATIAL_1 +
+                snap.data().SPATIAL_2 +
+                snap.data().SPATIAL_3 +
+                +snap.data().SPATIAL_4,
+              Recall: snap.data().RECALL_FIVEWORDS_ms,
             },
           ];
           obj.resultCount = 1;
@@ -38,6 +47,13 @@ const ProviderModule = (props) => {
             Results: snap.data().TOTAL_TABLET_PLANNED_ANALYSIS,
             date: snap.data().DATE,
             "Time to Complete": snap.data().TOTAL_TIME_min,
+            "Reading Speed": snap.data().READING_SPEED_MEDIAN_words_per_s,
+            Visuospatial:
+              snap.data().SPATIAL_1 +
+              snap.data().SPATIAL_2 +
+              snap.data().SPATIAL_3 +
+              +snap.data().SPATIAL_4,
+            Recall: snap.data().RECALL_FIVEWORDS_ms,
           });
         }
       });
@@ -48,7 +64,7 @@ const ProviderModule = (props) => {
   }, []);
 
   const handleAdd = (newRecords) => {
-    // console.log(newRecords);
+    // sort records before add them to state variable
     newRecords.sort((a, b) =>
       a.LASTNAME > b.LASTNAME ? 1 : b.LASTNAME > a.LASTNAME ? -1 : 0
     );
@@ -69,8 +85,9 @@ const ProviderModule = (props) => {
       <Box sx={{ flexGrow: 1, m: "20px" }}>
         <Grid container justifyContent="center" spacing={2}>
           {(records || []).map((snap) => (
-            <Grid item>
+            <Grid key={snap.PATIENT} item>
               <PatientCard
+                key={snap.PATIENT}
                 name={snap.FIRSTNAME + " " + snap.LASTNAME}
                 age={snap.AGE}
                 data={snap.DATA}

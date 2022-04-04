@@ -2,6 +2,8 @@
 
 This project was created for University of Victoria HINF 680 class assignment as a prototype expert system/decsision support system for Mild Coginative Impairement and Dementia Screening. Data from Bissig et al., 2020 on the Self-Administered Tasks Uncovering Risk of Neurodegeneration (SATURN) test was used for development of rules and logic but was adapted to demonstrate longitudinal screening. No elements of the tool have been clinical validated and it is for demonstration purposes to show what a potential solution could look like. 
 
+Bissig, D., Kaye, J., & Erten-Lyons, D. (2020). Validation of SATURN, a free, electronic, self-administered cognitive screening test. Alzheimer’s & Dementia: Translational Research & Clinical Interventions, 6(1), e12116. https://doi.org/10.1002/trc2.12116
+
 
 # Getting Started with Create React App
 

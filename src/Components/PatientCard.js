@@ -127,7 +127,7 @@ export default function PatientCard(props) {
         <Visualization data={props.data} />
       </CardContent>
       <CardActions disableSpacing>
-        <Typography component={"span"} variant="h3">
+        <Typography component={"span"} variant="subtitle2">
           Decision Support Rules
         </Typography>
 

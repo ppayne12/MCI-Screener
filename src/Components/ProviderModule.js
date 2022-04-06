@@ -74,7 +74,7 @@ const ProviderModule = (props) => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1, textAlign: "right", mt: "10px" }}>
+      <Box sx={{ flexGrow: 1, textAlign: "left", mt: "10px" }}>
         <Typography
           variant="h8"
           sx={{ m: "10px", fontStyle: "italic", fontWeight: "light" }}
